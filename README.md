@@ -311,4 +311,47 @@ C:\docker_learning>docker port 3cec3493b47f
 17. docker update => C:\docker_learning>docker update --cpus 2 --memory 512m 3cec3493b47f
 Error response from daemon: Cannot update container 3cec3493b47f6da8ace14361121600fe4b89f614a0e42f38306b8f800367ba75: Memory limit should be smaller than already set memoryswap limit, update the memoryswap at the same time
 
-18. docker restart => C:\docker_learning>docker restart 3cec3493b47f 3cec3493b47f 
+18. docker restart => C:\docker_learning>docker restart 3cec3493b47f
+3cec3493b47f
+ 
+
+ASSIGNMENT 1 : part 3 :
+. C:\docker_learning>docker volume create my_volume
+my_volume (creating name volume )
+
+.C:\docker_learning>docker run -d --name nginx-container -p 8080:80 -v my_volume:/usr/share/nginx/html nginx(creating docker container)
+
+.C:\docker_learning>docker cp index.html nginx-container:/usr/share/nginx/html/
+Successfully copied 2.05kB to nginx-container:/usr/share/nginx/html/(Copy the "index.html" file from your host machine to the "my_volume" volume)
+
+.C:\docker_learning>docker stop nginx-container
+nginx-container(stopping nginx )
+
+C:\docker_learning>docker rm nginx-container
+nginx-container(deleting nginx)
+
+
+.C:\docker_learning>docker run -d --name httpd-container -p 8081:80 -v my_volume:/usr/local/apache2/htdocs httpd
+Unable to find image 'httpd:latest' locally
+latest: Pulling from library/httpd
+52d2b7f179e3: Already exists
+5bfaffbad7bf: Pull complete
+460cd5c32012: Pull complete
+ba29f61f6139: Pull complete
+92baf798eff7: Pull complete
+Digest: sha256:333f7bca9fb72248f301fd2ae4892b86d36cc2fdf4c6aa49a6700f27c8e06daf
+Status: Downloaded newer image for httpd:latest
+e6514c28dc0065cf0163b2388ccf4cb858c3ec172fa4dabea529ac476cdf4938( i create new Docker container using the "httpd" image and mount the "my_volume" volume)(I navigate to http://localhost:8081 and "Docker Volume!  Testing Docker Volume" written on this page)
+
+. C:\docker_learning>docker cp about.html httpd-container:/usr/local/apache2/htdocs/
+Successfully copied 2.05kB to httpd-container:/usr/local/apache2/htdocs/ (i copy the about.html file from my host machine to the "my_volume" volume) (i navigate to http://localhost:8081/about.html. and i can see the content i added to the "about.html" file that is "Docker Volume!  Testing Docker Volume" written on this page .)
+
+. C:\docker_learning>docker stop httpd
+httpd  C:\docker_learning>docker rm httpd
+httpd("Stop and remove the httpd")
+
+.To check if a Docker volume is present i run the command ("C:\docker_learning>docker volume ls
+DRIVER    VOLUME NAME
+local     my_volume")
+
+. docker volume rm my_volume (for remove the "my_volume" volume)
