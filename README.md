@@ -10,4 +10,4 @@ Using "docker login" i logged in to my docker account using command prompt
 
 then i pushed my docker images to it : "docker push muhammadaffan05/test-app:latest" 
 
-docker repo link : https://hub.docker.com/r/muhammadaffan05/test-app
+docker repo link : https://hub.docker.com/repository/docker/muhammadaffan05/test-app/general
