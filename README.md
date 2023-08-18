@@ -311,6 +311,4 @@ C:\docker_learning>docker port 3cec3493b47f
 17. docker update => C:\docker_learning>docker update --cpus 2 --memory 512m 3cec3493b47f
 Error response from daemon: Cannot update container 3cec3493b47f6da8ace14361121600fe4b89f614a0e42f38306b8f800367ba75: Memory limit should be smaller than already set memoryswap limit, update the memoryswap at the same time
 
-18. docker restart => C:\docker_learning>docker restart 3cec3493b47f
-3cec3493b47f
- 
+18. docker restart => C:\docker_learning>docker restart 3cec3493b47f 3cec3493b47f 
