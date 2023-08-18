@@ -1,4 +1,4 @@
-ASSIGNMENT  PART 1  README FILE:
+# ASSIGNMENT  PART 1  README FILE:
 
 I started by creating a folder named docker_learning . Inside the docker_learning folder i created two files : app.py for simple Python program and a docker file which defines how the Docker image is built.
 
@@ -15,7 +15,7 @@ then i pushed my docker images to it : "docker push muhammadaffan05/test-app:lat
 docker repo link : https://hub.docker.com/repository/docker/muhammadaffan05/test-app/general
 
 
-ASSIGMENT-1 PART 2 README FILE:
+# ASSIGMENT-1 PART 2 README FILE:
 I make a docker container of docker image which i made in part 1:
 "C:\docker_learning>docker run --name my-test-container-2 muhammadaffan05/test-app:latest
 hello world"
@@ -315,7 +315,7 @@ Error response from daemon: Cannot update container 3cec3493b47f6da8ace143611216
 3cec3493b47f
  
 
-ASSIGNMENT 1 : part 3 :
+# ASSIGNMENT 1 : part 3 :
 . C:\docker_learning>docker volume create my_volume
 my_volume (creating name volume )
 
